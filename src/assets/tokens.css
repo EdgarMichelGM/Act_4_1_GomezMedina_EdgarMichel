@@ -1,0 +1,147 @@
+/*
+  - Paleta base: Para accesibilidad y contraste.
+  - Función: construir roles (primary, accent, text, etc.).
+*/
+:root {
+  --c-blue-900: #042744;
+  --c-blue-800: #063b6d;
+  --c-blue-700: #0b4f91;
+  --c-blue-600: #1764b4;
+
+  --c-amber-600: #da8a1b;
+  --c-amber-700: #bf7815;
+
+  --c-magenta-500: #c72df2;
+  --c-magenta-100: #f5e6ff;
+
+  --c-gray-50: #f9fafb;
+  --c-gray-100: #f3f4f6;
+  --c-gray-200: #e5e7eb;
+  --c-gray-300: #d1d5db;
+  --c-gray-400: #9ca3af;
+  --c-gray-500: #6b7280;
+  --c-gray-600: #4b5563;
+  --c-gray-700: #374151;
+  --c-gray-800: #1f2933;
+  --c-gray-900: #111827;
+
+  /* Para alerts */
+  --c-green-500: #22c55e;
+  --c-red-500: #ef4444;
+  --c-yellow-400: #facc15;
+
+  --c-white: #ffffff;
+  --c-black: #000000;
+}
+
+/*
+  Roles explican el uso en la UI: fondo, surface, primary, accent, text, border.
+  - Valores para cambiar el "theme" sin tocar componentes.
+*/
+:root {
+  --color-bg: var(--c-gray-50);
+  --color-surface: var(--c-white);
+  --color-surface-soft: var(--c-gray-100);
+
+  --color-primary: var(--c-blue-800);
+  --color-primary-hover: var(--c-blue-700);
+
+  --color-accent: var(--c-amber-600);
+  --color-accent-hover: var(--c-amber-700);
+
+  --color-tag-active-bg: var(--c-magenta-500);
+  --color-tag-active-text: var(--c-white);
+  --color-tag-muted-bg: var(--c-magenta-100);
+  --color-tag-muted-text: var(--c-magenta-500);
+
+  --color-text: var(--c-gray-900);
+  --color-text-soft: var(--c-gray-600);
+  --color-text-muted: var(--c-gray-500);
+
+  --color-border-subtle: var(--c-gray-200); /* Borde menos visible*/
+  --color-border-strong: var(--c-gray-300); /* Borde mas visible*/
+
+  --color-success: var(--c-green-500);
+  --color-error: var(--c-red-500);
+  --color-warning: var(--c-yellow-400);
+}
+
+/* DARK MODE ROLES */
+.theme-dark {
+  --color-bg: #020617;
+  --color-surface: #020617;
+  --color-surface-soft: #0b1120;
+
+  --color-primary: var(--c-blue-600);
+  --color-primary-hover: var(--c-blue-700);
+
+  --color-accent: var(--c-amber-600);
+  --color-accent-hover: var(--c-amber-700);
+
+  --color-tag-active-bg: var(--c-magenta-500);
+  --color-tag-active-text: var(--c-white);
+  --color-tag-muted-bg: rgba(199, 45, 242, 0.18);
+  --color-tag-muted-text: var(--c-magenta-100);
+
+  --color-text: var(--c-gray-50);
+  --color-text-soft: var(--c-gray-300);
+  --color-text-muted: var(--c-gray-500);
+
+  --color-border-subtle: #1e293b;
+  --color-border-strong: #334155;
+
+  --color-success: #4ade80;
+  --color-error: #f87171;
+  --color-warning: #facc15;
+}
+
+/* Tipografía */
+:root {
+  /* Escala tipográfica (unidades en rem para accesibilidad / escalado global)
+     - Usar --fs-md como tamaño base para body (1rem = 16px por defecto).
+     - Subir/bajar con las variables para mantener consistencia visual. */
+  --fs-xs: 0.75rem; /* extra small: captions, micro-labels, metadata */
+  --fs-sm: 0.875rem; /* small: inputs, helper text, small buttons */
+  --fs-md: 1rem; /* base: body copy, párrafos; recomendado para texto principal */
+  --fs-lg: 1.125rem; /* large: small headings, destacado en controles */
+  --fs-xl: 1.25rem; /* xl: secciones, títulos secundarios */
+  --fs-2xl: 1.5rem; /* 2xl: encabezados principales en pantallas pequeñas/medias */
+  --fs-3xl: 1.875rem; /* 3xl: encabezados grandes / héroes */
+
+  /* Alturas de línea
+     - tight para títulos compactos; normal para texto de lectura;
+     - relaxed para texto largo o interfaces más aireadas. */
+  --lh-tight: 1.1;
+  --lh-normal: 1.4;
+  --lh-relaxed: 1.6;
+
+  /* Pesos de fuente
+     - Usar semanticamente: regular para bloques, medium/semibold para énfasis,
+       bold para títulos. */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+}
+
+/* Radios */
+:root {
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-pill: 999px;
+}
+
+/* SHADOWS */
+:root {
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.08);
+  --shadow-md: 0 4px 8px rgba(15, 23, 42, 0.12);
+  --shadow-lg: 0 12px 24px rgba(15, 23, 42, 0.18);
+}
+
+:root {
+  --btn-height-sm: 2.1rem;
+  --btn-height-md: 2.5rem;
+  --btn-height-lg: 3rem;
+}
