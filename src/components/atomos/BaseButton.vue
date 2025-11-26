@@ -9,6 +9,10 @@
 </template>
 
 <script setup lang="ts">
+/**
+ * BaseButton Component: Botón reutilizable con variantes de estilo y tamaños.
+ * Permite personalización mediante props para adaptarse a diferentes contextos.
+ */
 import { computed } from 'vue'
 
 type Variant = 'primary' | 'accent' | 'neutral'
@@ -117,7 +121,7 @@ const sizeClass = computed(() => {
   text-decoration-color: var(--color-primary); /* subrayado azul */
 }
 
-/* Disabled s */
+/* Disabled */
 .btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;

@@ -2,6 +2,11 @@
 import BaseAvatar from '@/components/atomos/BaseAvatar.vue'
 import BaseText from '@/components/atomos/BaseText.vue'
 
+/**
+ * FilaIdentidadUsuario Component: Muestra la identidad del usuario con avatar, nombre y rol.
+ * Utiliza componentes atómicos para una presentación consistente y reutilizable.
+ */
+
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const props = defineProps<{
   nombre: string

@@ -20,6 +20,10 @@ const emit = defineEmits<{
   (e: 'consultar'): void
 }>()
 
+/**
+ * Maneja el evento de clic en el botón "Consultar".
+ * Emite un evento al componente padre para manejar la acción.
+ */
 const onConsultar = () => {
   emit('consultar')
 }
@@ -67,7 +71,7 @@ const onConsultar = () => {
 
 <style scoped>
 .tarjeta-materia {
-  background: var(--c-gray-200); /* gris tipo Figma */
+  background: var(--c-gray-200);
   border-radius: var(--radius-md);
   padding: 0.75rem 1rem;
   display: flex;

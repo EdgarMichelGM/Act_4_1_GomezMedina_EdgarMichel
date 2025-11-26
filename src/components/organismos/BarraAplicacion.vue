@@ -3,6 +3,9 @@ import { ref } from 'vue'
 import BaseIcon from '@/components/atomos/BaseIcon.vue'
 import BarraBusqueda from '@/components/moleculas/BarraBusqueda.vue'
 
+/**
+ * Opciones disponibles en la barra de aplicación.
+ */
 type OpcionHeader = 'chat' | 'lista' | 'inicio' | 'buscar' | 'perfil'
 
 const opcionActiva = ref<OpcionHeader>('perfil')
@@ -11,13 +14,24 @@ const emit = defineEmits<{
   (e: 'cambiar-vista', vista: OpcionHeader): void
 }>()
 
+/**
+ * Selecciona una opción en la barra de aplicación y emite un evento de cambio de vista.
+ * @param opcion - La opción seleccionada.
+ */
 const seleccionarOpcion = (opcion: OpcionHeader) => {
   opcionActiva.value = opcion
   emit('cambiar-vista', opcion)
 }
 
+/**
+ * Término de búsqueda ingresado por el usuario.
+ */
 const terminoBusqueda = ref('')
 
+/**
+ * Realiza una búsqueda con el término proporcionado.
+ * @param valor - El término de búsqueda.
+ */
 const hacerBusqueda = (valor: string) => {
   console.log('Buscar:', valor)
 }
@@ -152,5 +166,89 @@ const hacerBusqueda = (valor: string) => {
   color: var(--color-primary);
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.6);
   transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .barra-app {
+    padding-block: 0.75rem;
+    padding-inline: 1rem;
+    min-height: auto;
+  }
+
+  .barra-app__contenido {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .barra-app__lado-izquierdo {
+    min-width: auto;
+    flex: 1 0 100%;
+  }
+
+  .barra-app__buscador {
+    order: 3;
+    flex: 1 0 100%;
+    justify-content: stretch;
+  }
+
+  .barra-app__acciones {
+    order: 2;
+    margin-left: auto;
+    gap: 0.5rem;
+  }
+
+  .barra-app__buscador :deep(.buscador) {
+    min-width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .barra-app {
+    padding-block: 0.75rem;
+    padding-inline: 1rem;
+    min-height: auto;
+  }
+
+  .barra-app__contenido {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .barra-app__lado-izquierdo {
+    order: 1;
+    flex: 1 0 100%;
+    min-width: auto;
+  }
+
+  .barra-app__buscador {
+    order: 2;
+    flex: 1 0 100%;
+    justify-content: stretch;
+  }
+
+  .barra-app__buscador :deep(.buscador) {
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .barra-app__acciones {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background-color: var(--color-primary);
+    padding: 0.5rem 1.5rem;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0.5rem;
+
+    border-radius: 0;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.25);
+    z-index: 1000;
+  }
 }
 </style>

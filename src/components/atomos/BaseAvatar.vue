@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import BaseIcon from '@/components/atomos/BaseIcon.vue'
 
+/**
+ * BaseAvatar Component: Muestra un avatar de usuario.
+ * Esta diseñado para ser reutilizable y adaptable a diferentes tamaños.
+ */
 const props = defineProps<{
   src?: string
   alt?: string
@@ -14,7 +18,6 @@ const sizeClass = props.size || 'md'
   <div class="avatar" :class="`avatar--${sizeClass}`">
     <img v-if="src" :src="src" :alt="alt ?? 'avatar de usuario'" />
     <span v-else class="avatar__placeholder">
-      <!-- aquí usamos el icono definido en el catálogo -->
       <BaseIcon nombre="usuario" tamaño="lg" />
     </span>
   </div>

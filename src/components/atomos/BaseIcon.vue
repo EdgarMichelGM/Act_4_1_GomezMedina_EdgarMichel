@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
+/**
+ * BaseIcon Component: Icono SVG reutilizable.
+ * Permite seleccionar entre varios iconos predefinidos y ajustar su tamaño.
+ * Las funciones mandan a llamar los iconos según el nombre proporcionado en las props.
+ */
 type NombreIcono =
   | 'grupo'
   | 'usuario'
@@ -13,12 +18,17 @@ type NombreIcono =
   | 'carpeta'
   | 'estrella'
   | 'avisos'
+  | 'flecha-izquierda'
+  | 'mas'
 
 const props = defineProps<{
   nombre: NombreIcono
   tamaño?: 'sm' | 'md' | 'lg'
 }>()
 
+/**
+ * Clase CSS basada en el tamaño del icono.
+ */
 const claseTamaño = computed(() => {
   switch (props.tamaño) {
     case 'sm':
@@ -164,6 +174,31 @@ const claseTamaño = computed(() => {
         stroke-width="1.6"
         stroke-linecap="round"
         opacity="0.7"
+      />
+    </svg>
+
+    <!-- Flecha izquierda (volver) -->
+    <svg v-else-if="nombre === 'flecha-izquierda'" viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="11" fill="currentColor" opacity="0.15" />
+      <path
+        d="M13.5 7.5L9 12l4.5 4.5"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+
+    <!-- Mas -->
+    <svg v-else-if="nombre === 'mas'" viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.15" />
+      <path
+        d="M12 7v10M7 12h10"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
       />
     </svg>
   </span>

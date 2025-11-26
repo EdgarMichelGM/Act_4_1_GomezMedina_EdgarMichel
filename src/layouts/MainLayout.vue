@@ -42,7 +42,7 @@ const cambiarVista = (vista: OpcionHeader) => {
 
 .main-content {
   flex: 1;
-  padding: 2rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;

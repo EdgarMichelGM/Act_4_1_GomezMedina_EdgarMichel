@@ -2,18 +2,30 @@
 import { ref } from 'vue'
 import BaseIcon from '@/components/atomos/BaseIcon.vue'
 
+/**
+ * PestanasSeccion Component: Componente de pestañas para secciones.
+ * Permite la navegación entre diferentes secciones mediante pestañas interactivas.
+ */
+
 type OpcionTab = 'material' | 'retroalimentacion' | 'avisos'
 
 const props = defineProps<{
   activaInicial?: OpcionTab
 }>()
 
+/**
+ * Estado reactivo para la pestaña activa.
+ */
 const pestañaActiva = ref<OpcionTab>(props.activaInicial ?? 'material')
 
 const emit = defineEmits<{
   (e: 'cambiar', valor: OpcionTab): void
 }>()
 
+/**
+ * Selecciona una pestaña y emite un evento de cambio.
+ * @param valor - La pestaña seleccionada.
+ */
 const seleccionar = (valor: OpcionTab) => {
   pestañaActiva.value = valor
   emit('cambiar', valor)

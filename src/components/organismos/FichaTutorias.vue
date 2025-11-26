@@ -18,6 +18,11 @@ const emit = defineEmits<{
   (e: 'consultar-materia', materia: Materia): void
 }>()
 
+/**
+ * Maneja el evento de consulta de una materia.
+ * Emite el evento al componente padre con la materia seleccionada.
+ * @param materia - La materia que se desea consultar.
+ */
 const onConsultar = (materia: Materia) => {
   emit('consultar-materia', materia)
 }

@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import BaseIcon from '@/components/atomos/BaseIcon.vue'
-
+/*
+ * BarraBusqueda Component: Componente de barra de búsqueda reutilizable.
+ * Permite a los usuarios ingresar términos de búsqueda y emitir eventos para manejar la búsqueda.
+ */
 const props = defineProps<{
   modelValue?: string
   placeholder?: string
@@ -11,11 +14,19 @@ const emit = defineEmits<{
   (e: 'buscar', value: string): void
 }>()
 
+/**
+ * Maneja el evento de entrada en el campo de búsqueda.
+ * Emite el valor actualizado al componente padre.
+ */
 const onInput = (event: Event) => {
   const target = event.target as HTMLInputElement
   emit('update:modelValue', target.value)
 }
 
+/**
+ * Maneja el evento de tecla presionada.
+ * Si se presiona "Enter", emite el evento de búsqueda con el valor actual.
+ */
 const onEnter = (event: KeyboardEvent) => {
   if (event.key === 'Enter') {
     emit('buscar', props.modelValue ?? '')

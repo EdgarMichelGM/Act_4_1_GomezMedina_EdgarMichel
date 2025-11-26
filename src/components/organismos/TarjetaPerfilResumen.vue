@@ -11,6 +11,9 @@ const props = defineProps<{
   avatar?: string
 }>()
 
+/**
+ * Emite eventos para editar el perfil y cerrar sesión.
+ */
 const emit = defineEmits(['editar', 'cerrar'])
 </script>
 
@@ -95,5 +98,37 @@ const emit = defineEmits(['editar', 'cerrar'])
 .avatar__placeholder :deep(svg) {
   width: 80%;
   height: 80%;
+}
+
+@media (max-width: 768px) {
+  .tarjeta-perfil {
+    padding: 1.25rem;
+  }
+
+  .tarjeta-perfil__contenido {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .tarjeta-perfil__avatar {
+    margin-right: 0;
+  }
+
+  .tarjeta-perfil__info {
+    align-items: center;
+  }
+
+  .tarjeta-perfil__acciones {
+    width: 100%;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .tarjeta-perfil__acciones button {
+    width: 100%;
+  }
 }
 </style>
